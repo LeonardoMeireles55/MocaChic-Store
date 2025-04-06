@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
-import {  Bodoni_Moda_SC } from 'next/font/google'
+import { Bodoni_Moda_SC, Montserrat } from 'next/font/google'
+import type React from 'react'
 
-import './globals.css'
+import { ThemeProvider } from '@/components/theme-provider'
 import Head from 'next/head'
+import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Moça Chic Fortaleza',
@@ -18,23 +20,43 @@ export const metadata: Metadata = {
 
 const bodoniModa = Bodoni_Moda_SC({
   subsets: ['latin'],
-    style: ['italic'],
+  style: ['italic'],
   weight: ['400'],
-  display: 'swap',
+  variable: '--font-bodoni',
+  display: 'swap'
+})
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-montserrat',
+  display: 'swap'
 })
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR" className={bodoniModa.className}>
+    <html
+      lang='pt-BR'
+      className={`${bodoniModa.variable} ${montserrat.variable}`}
+      suppressHydrationWarning
+    >
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
-      <body>{children}</body>
+      <body className='font-sans'>
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='light'
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }

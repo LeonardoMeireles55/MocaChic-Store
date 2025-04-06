@@ -5,4 +5,3 @@ export interface Product {
   price: string
   image: string
 }
-
