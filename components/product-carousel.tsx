@@ -1,0 +1,171 @@
+"use client"
+
+import { useState, useEffect } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { ChevronLeft, ChevronRight, ShoppingBag } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/button"
+
+interface Product {
+  id: number
+  name: string
+  description: string
+  price: string
+  image: string
+}
+
+interface ProductCarouselProps {
+  products: Product[]
+  whatsappLink: string
+}
+
+export function ProductCarousel({ products, whatsappLink }: Readonly<ProductCarouselProps>) {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+  const [isAnimating, setIsAnimating] = useState(false)
+
+  // Check if we're on mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+
+    return () => {
+      window.removeEventListener("resize", checkMobile)
+    }
+  }, [])
+
+  const nextSlide = () => {
+    if (isAnimating) return
+
+    setIsAnimating(true)
+    setCurrentIndex((prevIndex) => (prevIndex === products.length - 1 ? 0 : prevIndex + 1))
+
+    setTimeout(() => {
+      setIsAnimating(false)
+    }, 500)
+  }
+
+  const prevSlide = () => {
+    if (isAnimating) return
+
+    setIsAnimating(true)
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? products.length - 1 : prevIndex - 1))
+
+    setTimeout(() => {
+      setIsAnimating(false)
+    }, 500)
+  }
+
+  const goToSlide = (index: number) => {
+    if (isAnimating || index === currentIndex) return
+
+    setIsAnimating(true)
+    setCurrentIndex(index)
+
+    setTimeout(() => {
+      setIsAnimating(false)
+    }, 500)
+  }
+
+  // Show only one product on mobile, and up to 3 on larger screens
+  const visibleProducts = []
+  const displayCount = isMobile ? 1 : 4
+
+  for (let i = 0; i < displayCount; i++) {
+    const index = (currentIndex + i) % products.length
+    visibleProducts.push(products[index])
+  }
+
+  return (
+    <div className="relative w-full max-w-7xl mx-auto px-4">
+      <div className="flex items-center justify-center gap-6 md:gap-8 py-8">
+        {/* Products */}
+        {visibleProducts.map((product, idx) => (
+          <div
+            key={`${product.id}-${idx}`}
+            className="group max-w-sm overflow-hidden rounded-xl border border-amber-100 bg-white shadow-md transition-all duration-500 hover:shadow-xl hover:-translate-y-1 hover:border-amber-300"
+          >
+
+            <div className="relative aspect-[2/4] overflow-hidden">
+              <div className="absolute top-4 right-4 z-10">
+                <span className="bg-amber-500 animate-pulse text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">Novo</span>
+              </div>
+
+              <Image
+                src={product.image || "/placeholder.svg"}
+                alt={product.name}
+                width={550}
+                height={600}
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-4 left-0 right-0 flex justify-center">
+                  <Link href={whatsappLink} target="_blank" rel="noopener noreferrer">
+                    <Button className="bg-white flex flex-row text-[12px] text-amber-800 hover:bg-amber-50 rounded-full px-6 py-2 shadow-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                      <ShoppingBag className="mr-2 h-4 w-4" />
+                      Detalhes
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="p-6 text-center bg-gradient-to-b from-amber-50 to-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <h3 className="font-extralight text-amber-900 text-xl transition-colors duration-300 hover:text-amber-700">
+                {product.name}
+              </h3>
+              <div className="mt-2 gap-2 flex items-center justify-center">
+                <span className="font-extralight text-xs line-through px-3 py-1 rounded-full shadow-sm">
+                  {product.price}
+                </span>
+                  <span className="font-extralight text-white text-md  bg-amber-700 px-3 py-1 rounded-full shadow-sm">
+                  {product.price}
+                </span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Navigation Arrows */}
+      <Button
+        onClick={prevSlide}
+        disabled={isAnimating}
+        className="absolute left-0 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-3 text-amber-800 shadow-md hover:bg-white hover:text-amber-900 transition-all duration-300 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
+        aria-label="Produto anterior"
+      >
+        <ChevronLeft className="h-6 w-6" />
+      </Button>
+      <Button
+        onClick={nextSlide}
+        disabled={isAnimating}
+        className="absolute right-0 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-3 text-amber-800 shadow-md hover:bg-white hover:text-amber-900 transition-all duration-300 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"
+        aria-label="Próximo produto"
+      >
+        <ChevronRight className="h-6 w-6" />
+      </Button>
+
+      {/* Dots */}
+      <div className="mt-8 flex justify-center gap-2">
+        {products.map((_, idx) => (
+          <Button
+            key={idx}
+            onClick={() => goToSlide(idx)}
+            disabled={isAnimating}
+            className={cn(
+              "h-3 rounded-full transition-all duration-300 disabled:cursor-not-allowed",
+              currentIndex === idx ? "bg-amber-800 w-8" : "bg-amber-200 w-3 hover:bg-amber-300 hover:scale-110",
+            )}
+            aria-label={`Ir para produto ${idx + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
