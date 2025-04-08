@@ -16,8 +16,8 @@ services:
     image: nginx:alpine
     container_name: mocachic-nginx
     ports:
-      - "80:81"
-      - "443:444"
+      - "81:81"
+      - "444:444"
     volumes:
       - ./nginx/conf.d:/etc/nginx/conf.d
       - ./nginx/mocachic/ssl:/etc/nginx/ssl/mocachic
