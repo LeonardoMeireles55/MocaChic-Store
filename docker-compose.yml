@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile.prod
+    container_name: mocachic-app
+    restart: always
+    environment:
+      - NODE_ENV=production
+    networks:
+      - mocachic-network
+
+  nginx:
+    image: nginx:alpine
+    container_name: mocachic-nginx
+    ports:
+      - "80:81"
+      - "443:444"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/mocachic/ssl:/etc/nginx/ssl/mocachic
+    depends_on:
+      - app
+    networks:
+      - mocachic-network
+    restart: always
+
+networks:
+  mocachic-network:
+    driver: bridge
