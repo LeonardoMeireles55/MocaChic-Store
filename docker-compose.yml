@@ -20,7 +20,7 @@ services:
       - "444:444"
     volumes:
       - ./nginx:/etc/nginx:ro
-      - ./nginx/mocachic/ssl:/etc/nginx/ssl:ro
+      - ./nginx/ssl/mocachic:/etc/nginx/ssl:ro
     depends_on:
       - app
     networks:
