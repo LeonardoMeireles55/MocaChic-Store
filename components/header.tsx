@@ -25,7 +25,7 @@ export function Header({ imageSrc, menuItems, scrollToSection }: Readonly<Header
               width={200}
               height={200}
               className='drop-shadow-sm'
-              style={{ width: 'auto', height: 'auto' }}
+              style={{ width: '50', height: '50' }}
             />
           </span>
           <span className='absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-300 group-hover:w-full transition-all duration-300 z-0'></span>
