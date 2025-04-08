@@ -20,7 +20,7 @@ export function Header({ imageSrc, menuItems, scrollToSection }: Readonly<Header
         <div className='text-2xl font-semibold text-amber-800 relative group'>
           <span className='relative z-10 transition-transform duration-500 hover:scale-105'>
             <Image
-              src={imageSrc || '/placeholder.svg'}
+              src={imageSrc ? imageSrc : '/placeholder.svg'}
               alt='Logo'
               width={200}
               height={200}

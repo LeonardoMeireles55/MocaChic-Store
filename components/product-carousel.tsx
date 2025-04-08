@@ -151,8 +151,8 @@ const ProductCarousel = ({ products = [], whatsappLink }: ProductCarouselProps) 
                   </div>
 
                   <Image
-                    src={product.image || '/placeholder.svg'}
-                    alt={product.name}
+                    src={product?.image ? product.image : '/placeholder.svg'}
+                    alt={product?.name || 'Produto'}
                     width={550}
                     height={600}
                     className={cn(
