@@ -101,7 +101,7 @@ const ProductCarousel = ({ products = [], whatsappLink }: ProductCarouselProps) 
 
   // Função para criar o link do WhatsApp com o nome do produto
   const getWhatsAppLink = (product: Product) => {
-    const message = `Olá! Gostaria de saber mais sobre o produto: ${product.name} - R$ ${product.price}`
+    const message = `Olá! Gostaria de saber mais sobre o produto: "${product.name}  ${product.description}"`
     const encodedMessage = encodeURIComponent(message)
     return `${whatsappLink}?text=${encodedMessage}`
   }
@@ -188,16 +188,15 @@ const ProductCarousel = ({ products = [], whatsappLink }: ProductCarouselProps) 
                   </p>
                   
                   <div className='mt-3 md:mt-4 gap-1 md:gap-2 flex items-center justify-center'>
-                    <span className='font-extralight text-[10px] md:text-xs line-through px-2 md:px-3 py-0.5 md:py-1 rounded-full shadow-sm bg-amber-100 text-amber-600'>
+                    <span className='font-extralight text-[10px] mt-2 md:mt-1 md:text-xs line-through px-0.5 md:px-3 py-0 md:py-1 rounded-full shadow-sm bg-amber-100 text-amber-600'>
                       {(+product.price + (+product.price * 10 / 100)).toFixed(2)}
                     </span>
                     <Link 
                       href={getWhatsAppLink(product)} 
                       target='_blank' 
                       rel='noopener noreferrer'
-                      className="focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 rounded-full"
                     >
-                      <span className='font-medium text-white text-[8px] md:text-xs bg-gradient-to-r from-amber-600 to-amber-400 px-1 md:px-2 py-1 md:py-1.5 rounded-full shadow-sm'>
+                      <span className='font-medium text-white text-[8px] md:text-xs bg-gradient-to-r from-amber-600 to-amber-400 px-2 md:px-2 py-1 md:py-1.5 rounded-full shadow-sm'>
                         R${product.price}
                       </span>
                     </Link>
