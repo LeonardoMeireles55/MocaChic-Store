@@ -22,8 +22,8 @@ export function Header({ imageSrc, menuItems, scrollToSection }: Readonly<Header
             <Image
               src={imageSrc ? imageSrc : '/placeholder.svg'}
               alt='Logo'
-              width={200}
-              height={200}
+              width={150}
+              height={150}
               className='drop-shadow-sm'
               style={{ width: '50', height: '50' }}
             />
