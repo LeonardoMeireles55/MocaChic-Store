@@ -31,49 +31,49 @@ export default function LandingPage() {
       name: 'Vestido Mocha',
       description: 'Elegante vestido em tom mocha, perfeito para ocasiões especiais',
       price: '70.99',
-      image: '/images/products/mocha-70.99.jpeg'
+      image: '/images/products/mocha-70_99.jpeg'
     },
     {
       id: 2,
       name: 'Conjunto Ester',
       description: 'Conjunto versátil e elegante para diversas ocasiões',
       price: '45.00',
-      image: '/images/products/Cojunto Ester-45.jpeg'
+      image: '/images/products/Cojunto-Ester-45.jpeg'
     },
     {
       id: 3,
       name: 'Macacão Sofia',
       description: 'Macacão moderno e sofisticado para um visual descontraído',
       price: '70.00',
-      image: '/images/products/Macacão Sofia-70.jpeg'
+      image: '/images/products/Macacão-Sofia-70.jpeg'
     },
     {
       id: 4,
       name: 'Vestido Alana',
       description: 'Vestido delicado e feminino para momentos especiais',
       price: '44.99',
-      image: '/images/products/Vestido Alana-44,99.jpeg'
+      image: '/images/products/Vestido-Alana-44_99.jpeg'
     },
     {
       id: 5,
       name: 'Vestido Aline',
       description: 'Vestido elegante com design contemporâneo',
       price: '70.00',
-      image: '/images/products/Vestido Aline-70.jpeg'
+      image: '/images/products/Vestido-Aline-70.jpeg'
     },
     {
       id: 6,
       name: 'Vestido Kelly',
       description: 'Vestido sofisticado para destacar sua beleza natural',
       price: '65.00',
-      image: '/images/products/Vestido Kelly-65.jpeg'
+      image: '/images/products/Vestido-Kelly-65.jpeg'
     },
     {
       id: 7,
       name: 'Vestido Sayo',
       description: 'Vestido moderno com design exclusivo',
       price: '70.00',
-      image: '/images/products/Vestido sayo-70.jpeg'
+      image: '/images/products/Vestido-Sayo-70.jpeg'
     }
   ]
 
