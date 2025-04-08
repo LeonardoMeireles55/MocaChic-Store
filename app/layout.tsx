@@ -7,6 +7,7 @@ import { MetaPixel } from '@/components/meta-pixel'
 import { GoogleAnalytics } from '@/components/google-analytics'
 import { SimpleChatbot } from '@/components/simple-chatbot'
 import './globals.css'
+import { Suspense } from 'react'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -65,8 +66,10 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+        <Suspense fallback={null}>
         <MetaPixel />
         <GoogleAnalytics />
+        </Suspense>
         <SimpleChatbot whatsappNumber={whatsappNumber} storeName={storeName} />
       </body>
     </html>
