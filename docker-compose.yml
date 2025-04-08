@@ -16,3 +16,4 @@ networks:
   quality-net:
     name: quality-net
     driver: bridge
+    external: true
