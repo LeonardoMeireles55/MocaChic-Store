@@ -19,8 +19,8 @@ services:
       - "81:81"
       - "444:444"
     volumes:
-      - ./nginx/conf.d:/etc/nginx/conf.d
-      - ./nginx/mocachic/ssl:/etc/nginx/ssl/mocachic
+      - ./nginx:/etc/nginx:ro
+      - ./nginx/mocachic/ssl:/etc/nginx/ssl:ro
     depends_on:
       - app
     networks:
