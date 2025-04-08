@@ -13,22 +13,6 @@ services:
       - '3000:3000'
     networks:
       - mocachic-network
-
-  nginx:
-    image: nginx:alpine
-    container_name: mocachic-nginx
-    ports:
-      - "81:81"
-      - "444:444"
-    volumes:
-      - ./nginx:/etc/nginx:ro
-      - ./nginx/ssl/mocachic:/etc/nginx/ssl/mocachic:ro
-    depends_on:
-      - app
-    networks:
-      - mocachic-network
-    restart: always
-
 networks:
   mocachic-network:
     driver: bridge
