@@ -43,8 +43,8 @@ export function HeroSection({
             className='flex flex-col sm:flex-row gap-4 mt-4 animate-slide-up'
             style={{ animationDelay: '0.3s' }}
           >
-            <Link href={whatsappLink} target='_blank' rel='noopener noreferrer'>
-              <Button className='bg-amber-800 hover:bg-amber-900 text-amber-50 px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-base hover:translate-y-[-2px]'>
+            <Link href={`${whatsappLink}?text=Olá! Gostaria de saber mais sobre os produtos da MocaChic.`} target='_blank' rel='noopener noreferrer'>
+              <Button className='bg-green-600 from-green-600 to-green-500 text-white px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-base hover:translate-y-[-2px]'>
                 <Phone className='mr-2 h-4 w-4' />
                 {primaryButtonText}
               </Button>

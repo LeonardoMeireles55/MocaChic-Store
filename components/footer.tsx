@@ -93,14 +93,14 @@ export function Footer({
             </ul>
             <div className='mt-6 flex space-x-4'>
               <Link
-                href='#'
+                href='https://www.instagram.com/mocachicfortaleza/'
                 className='bg-stone-800 hover:bg-amber-700 text-white p-3 rounded-full transition-all duration-300'
                 aria-label='Facebook'
               >
                 <Facebook className='h-5 w-5' />
               </Link>
               <Link
-                href='#'
+                href='https://www.instagram.com/mocachicfortaleza'
                 className='bg-stone-800 hover:bg-amber-700 text-white p-3 rounded-full transition-all duration-300'
                 aria-label='Instagram'
               >

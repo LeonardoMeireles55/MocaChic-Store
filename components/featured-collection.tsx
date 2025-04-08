@@ -1,4 +1,4 @@
-import { ProductCarousel } from '@/components/product-carousel'
+import   ProductCarousel  from '@/components/product-carousel'
 import type { Product } from '@/types/product'
 
 interface FeaturedCollectionProps {

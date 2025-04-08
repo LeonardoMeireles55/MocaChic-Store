@@ -6,6 +6,7 @@ import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
 import { HeroSection } from '@/components/hero-section'
 import { TestimonialsSection } from '@/components/testimonials-section'
+import { VideoSection } from '@/components/video-section'
 import type { Product } from '@/types/product'
 import { Phone, Star } from 'lucide-react'
 import { useCallback } from 'react'
@@ -28,40 +29,51 @@ export default function LandingPage() {
     {
       id: 1,
       name: 'Vestido Mocha',
-      description:
-        'Elegante vestido em tom mocha, perfeito para ocasiões especiais e eventos de verão',
-      price: 'R$ 189,99',
-      image: '/images/products/mocha.jpeg'
+      description: 'Elegante vestido em tom mocha, perfeito para ocasiões especiais',
+      price: '70.99',
+      image: '/images/products/mocha-70.99.jpeg'
     },
     {
       id: 2,
-      name: 'Vestido Black',
-      description: 'Clássico vestido preto, versátil para qualquer ocasião com caimento impecável',
-      price: 'R$ 99,99',
-      image: '/images/products/preto.jpeg'
+      name: 'Conjunto Ester',
+      description: 'Conjunto versátil e elegante para diversas ocasiões',
+      price: '45.00',
+      image: '/images/products/Cojunto Ester-45.jpeg'
     },
     {
       id: 3,
-      name: 'Vestido White Glam',
-      description:
-        'Deslumbrante vestido branco com detalhes sofisticados para momentos inesquecíveis',
-      price: 'R$ 259,99',
-      image: '/images/products/branco.jpeg'
+      name: 'Macacão Sofia',
+      description: 'Macacão moderno e sofisticado para um visual descontraído',
+      price: '70.00',
+      image: '/images/products/Macacão Sofia-70.jpeg'
     },
     {
       id: 4,
-      name: 'Vestido Rosê',
-      description: 'Delicado vestido em tom rosê com tecido macio e acabamento premium',
-      price: 'R$ 149,99',
-      image: '/images/products/rosa.jpeg'
+      name: 'Vestido Alana',
+      description: 'Vestido delicado e feminino para momentos especiais',
+      price: '44.99',
+      image: '/images/products/Vestido Alana-44,99.jpeg'
     },
     {
       id: 5,
-      name: 'Vestido Red Summer',
-      description:
-        'Vibrante vestido vermelho ideal para destacar sua beleza nos dias quentes de verão',
-      price: 'R$ 179,99',
-      image: '/images/products/vermelho.jpeg'
+      name: 'Vestido Aline',
+      description: 'Vestido elegante com design contemporâneo',
+      price: '70.00',
+      image: '/images/products/Vestido Aline-70.jpeg'
+    },
+    {
+      id: 6,
+      name: 'Vestido Kelly',
+      description: 'Vestido sofisticado para destacar sua beleza natural',
+      price: '65.00',
+      image: '/images/products/Vestido Kelly-65.jpeg'
+    },
+    {
+      id: 7,
+      name: 'Vestido Sayo',
+      description: 'Vestido moderno com design exclusivo',
+      price: '70.00',
+      image: '/images/products/Vestido sayo-70.jpeg'
     }
   ]
 
@@ -99,7 +111,6 @@ export default function LandingPage() {
   //   },
   // ]
 
-  // Testimonials data
   const testimonials = [
     {
       name: 'Maria S.',
@@ -132,7 +143,7 @@ export default function LandingPage() {
           whatsappLink={whatsappLink}
           badge='Nova Coleção 2025'
           title='Elegância para Todas as Ocasiões'
-          description='Descubra nossa coleção de peças atemporais e modernas que celebram a feminilidade e a confiança.'
+          description='Descubra nossa loja e coleção de peças atemporais e modernas que celebram a feminilidade e a confiança.'
           primaryButtonText='Compre Agora'
           secondaryButtonText='Ver Coleção'
         />
@@ -140,6 +151,11 @@ export default function LandingPage() {
           products={products}
           whatsappLink={whatsappLink}
           title='Coleção em Destaque'
+        />
+        <VideoSection 
+          videoId="VYIr1YTZr_g"
+          title="Conheça Nossa Coleção"
+          description="Assista ao nosso comercial e descubra as últimas tendências da moda feminina."
         />
         <CallToAction
           whatsappLink={whatsappLink}
@@ -157,7 +173,7 @@ export default function LandingPage() {
       <Footer
         whatsappLink={whatsappLink}
         brandName='Moça Chic Fortaleza'
-        description='Elevando a moda feminina com coleções selecionadas que combinam elegância atemporal com tendências contemporâneas.'
+        description='Loja de fabrica'
         address='Avenida Jurunas, AF-25, Cidade Nova, Manaus'
         email='mocachicfortaleza@gmail.com'
         phone='(92) 99412-8570'

@@ -33,7 +33,7 @@ export function CallToAction({
             {description}
           </p>
           <Link
-            href={whatsappLink}
+            href={`${whatsappLink}?text=Olá! Gostaria de saber mais sobre os produtos da MocaChic.`}
             target='_blank'
             rel='noopener noreferrer'
             className='mt-6 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-green-600 to-green-500 px-8 py-4 text-base font-medium text-white shadow-lg transition-all duration-300 hover:from-green-700 hover:to-green-600 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 group hover:-translate-y-1'

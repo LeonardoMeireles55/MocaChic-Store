@@ -1,10 +1,17 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Bodoni_Moda_SC, Montserrat } from 'next/font/google'
 import type React from 'react'
 
 import { ThemeProvider } from '@/components/theme-provider'
-import Head from 'next/head'
+import { MetaPixel } from '@/components/meta-pixel'
+import { GoogleAnalytics } from '@/components/google-analytics'
+import { SimpleChatbot } from '@/components/simple-chatbot'
 import './globals.css'
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}
 
 export const metadata: Metadata = {
   title: 'Moça Chic Fortaleza',
@@ -15,7 +22,10 @@ export const metadata: Metadata = {
   keywords: ['Loja de roupas femininas', 'Moda feminina', 'Roupas femininas em Fortaleza'],
   authors: [{ name: 'Leonardo Nogueira Meireles' }],
   creator: 'Leonardo Nogueira Meireles',
-  publisher: 'Leonardo Nogueira Meireles'
+  publisher: 'Leonardo Nogueira Meireles',
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 const bodoniModa = Bodoni_Moda_SC({
@@ -37,16 +47,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const whatsappNumber = '5592994128570'
+  const storeName = 'Moça Chic Fortaleza'
+
   return (
     <html
       lang='pt-BR'
       className={`${bodoniModa.variable} ${montserrat.variable}`}
       suppressHydrationWarning
     >
-      <Head>
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
       <body className='font-sans'>
         <ThemeProvider
           attribute='class'
@@ -56,6 +65,9 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+        <MetaPixel />
+        <GoogleAnalytics />
+        <SimpleChatbot whatsappNumber={whatsappNumber} storeName={storeName} />
       </body>
     </html>
   )
