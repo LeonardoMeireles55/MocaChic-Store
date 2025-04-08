@@ -12,8 +12,8 @@ services:
     ports:
       - '3000:3000'
     networks:
-      - mocachic-network
+      - quality-net
 networks:
-  mocachic-network:
+  quality-net:
     driver: bridge
     external: true
