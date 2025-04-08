@@ -11,3 +11,8 @@ services:
       - '3000:3000'
     networks:
        - quality-net
+
+networks:
+  quality-net:
+    name: quality-net
+    driver: bridge
