@@ -3,7 +3,7 @@ import Link from 'next/link'
 export function SeoOptimizedSection() {
   return (
     <section className='py-12 bg-amber-50 relative overflow-hidden'>
-      <div className="absolute inset-0 bg-[url('/images/simple_logo.png?height=1080&width=1920')] bg-cover bg-bottom opacity-15"></div>
+      <div className="pointer-events-none absolute inset-0 bg-[url('/images/simple_logo.png?height=1080&width=1920')] bg-cover bg-bottom opacity-15"></div>
       <div className='container px-4 md:px-6 max-w-4xl mx-auto '>
         <div className='prose prose-amber mx-auto '>
           <h2 className='text-2xl font-serif font-bold text-amber-900 text-center mb-6'>
@@ -46,9 +46,7 @@ export function SeoOptimizedSection() {
 
           <p className='text-amber-800/80 mb-4'>
             Visite nossa <strong>loja de roupas femininas</strong> online e descubra por que somos
-            referência em
-            <em>moda feminina em Fortaleza</em>. Siga-nos nas redes sociais para ficar por dentro
-            das novidades e promoções exclusivas.
+            referência em <em>moda feminina em Fortaleza</em>. Siga-nos nas redes sociais...
           </p>
 
           <div className='mt-8 text-center'>

@@ -1,4 +1,4 @@
-import { Clock, CreditCard, Facebook, FileText, Instagram, Mail, MapPin, Phone } from 'lucide-react'
+import { Clock, CreditCard, Facebook, FileText, Instagram, Mail, Mails, MapPin, Phone, Plane, Ship, Truck } from 'lucide-react'
 import Link from 'next/link'
 
 interface FooterProps {
@@ -54,7 +54,28 @@ export function Footer({
                 </li>
               ))}
             </ul>
-          </div>
+              <div id='shipping' className='mt-8'>
+                <h4 className='text-lg font-semibold text-white mb-4 '>Formas de envio</h4>
+                <ul  className='space-y-2 text-stone-200 grid grid-cols-2'>
+                  <li className='flex items-center'>
+                    <Plane  className='mr-3 h-5 w-5 text-amber-500 flex-shrink-0' />
+                      Aéreo
+                  </li>
+                  <li className='flex items-center'>
+                    <Ship  className='mr-3 h-5 w-5 text-amber-500 flex-shrink-0' />
+                      Porto
+                  </li>
+                                    <li className='flex items-center'>
+                    <Mails   className='mr-3 h-5 w-5 text-amber-500 flex-shrink-0' />
+                      Correios
+                  </li>
+                    <li className='flex items-center'>
+                    <Truck    className='mr-3 h-5 w-5 text-amber-500 flex-shrink-0' />
+                      Rodoviário
+                  </li>
+                </ul>
+              </div>
+          </div>  
           <div>
             <h3 className='text-xl font-semibold text-white mb-6 flex items-center'>
               <div className='bg-amber-700 h-6 w-1 mr-3 rounded-full' />
@@ -93,11 +114,11 @@ export function Footer({
             )}
           </div>
           <div>
-            <h3 className='text-xl font-semibold text-white mb-6 flex items-center'>
+            <h3  className='text-xl font-semibold text-white mb-6 flex items-center'>
               <div className='bg-amber-700 h-6 w-1 mr-3 rounded-full' />
               Contato
             </h3>
-            <ul className='space-y-4 text-stone-400'>
+            <ul id='contacts' className='space-y-4 text-stone-400'>
               <li className='flex items-center'>
                 <Phone className='mr-3 h-5 w-5 text-amber-500 flex-shrink-0' />
                 <Link
@@ -138,6 +159,7 @@ export function Footer({
             </div>
           </div>
         </div>
+
 
         <div className='mt-12 pt-8 border-t border-stone-800 text-center'>
           <p className='text-stone-500'>

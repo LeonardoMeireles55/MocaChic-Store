@@ -13,7 +13,7 @@ export function FeaturedCollection({
   title
 }: Readonly<FeaturedCollectionProps>) {
   return (
-    <section id='colecao' className='py-24 md:py-32 relative overflow-hidden elegant-gradient'>
+    <section id='colections' className='py-24 md:py-32 relative overflow-hidden elegant-gradient'>
       <div className='container px-4 md:px-6 relative z-10'>
         <div className="absolute inset-0 bg-[url('/images/nav_bar_logo.png?height=540&width=960')] bg-bottom opacity-5"></div>
         <div className='flex flex-col items-center mb-16 animate-fade-in'>

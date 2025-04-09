@@ -7,6 +7,10 @@
     text-wrap: balance;
   }
 
+    .highlight {
+    @apply ring-4 p-2 rounded-xl ring-yellow-400 transition-all duration-500;
+  }
+
   /* Animações personalizadas */
   .animate-fade-in {
     animation: fadeIn 0.8s ease-in-out;

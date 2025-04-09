@@ -30,12 +30,12 @@ export function Header({ imageSrc, menuItems, scrollToSection }: Readonly<Header
           </span>
           <span className='absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-300 group-hover:w-full transition-all duration-300 z-0'></span>
         </div>
-        <nav className='space-x-8 md:flex hidden'>
+        <nav className='md:space-x-8 space-x-4 flex flex-row md:flex-row'>
           {menuItems.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className="text-lg font-extralight text-amber-700 hover:text-amber-800 transition-all duration-300
+              className="text-[8px] md:text-lg font-extralight text-amber-700 hover:text-amber-800 transition-all duration-300
                relative group flex items-center gap-1 after:content-[''] after:absolute after:-bottom-1
                after:left-0 after:w-0 after:h-0.5 after:bg-amber-300 after:transition-all after:duration-300 hover:after:w-full"
             >
