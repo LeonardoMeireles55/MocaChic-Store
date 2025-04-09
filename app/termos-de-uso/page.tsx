@@ -3,7 +3,7 @@
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 import { Breadcrumbs } from "@/components/breadcrumbs"
-import { Phone } from "lucide-react"
+import { Home, Phone } from "lucide-react"
 import Link from "next/link"
 import { HeaderWithScroll } from '@/components/headerWithScroll'
 
@@ -19,7 +19,7 @@ export default function TermsOfUsePage() {
   const whatsappLink = `https://wa.me/${whatsappNumber}`
 
   const menuItems = [
-    { name: "Início", id: "home", href: "/" },
+    { name: "Início", id: "home", href: "/", icon: <Home className="h-5 w-5" /> },
     { name: "Contato", id: "footer", icon: <Phone className="h-5 w-5" /> },
   ]
 
@@ -87,9 +87,7 @@ export default function TermsOfUsePage() {
               <h2 className="text-2xl font-serif font-bold text-amber-800 mt-8 mb-4">6. Entrega</h2>
 
               <p className="mb-4">
-                Faremos todos os esforços razoáveis para entregar os produtos dentro do prazo estimado. No entanto, não
-                podemos garantir prazos de entrega específicos. O risco de perda e dano aos produtos passa para você no
-                momento da entrega.
+                Enviamos para todos os municípios do Amazonas e estados vizinhos, aéreo, rodoviário, porto e correios.
               </p>
 
               <h2 className="text-2xl font-serif font-bold text-amber-800 mt-8 mb-4">7. Política de Devolução</h2>

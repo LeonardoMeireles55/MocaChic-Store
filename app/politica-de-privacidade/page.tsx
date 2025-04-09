@@ -2,7 +2,7 @@
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 import { Breadcrumbs } from "@/components/breadcrumbs"
-import { Phone } from "lucide-react"
+import { Home, Phone } from "lucide-react"
 import Link from "next/link"
 import { HeaderWithScroll } from "@/components/headerWithScroll"
 
@@ -18,7 +18,7 @@ export default function PrivacyPolicyPage() {
   const whatsappLink = `https://wa.me/${whatsappNumber}`
 
   const menuItems = [
-    { name: "Início", id: "home", href: "/" },
+    { name: "Início", id: "home", href: "/", icon: <Home className="h-5 w-5" /> },
     { name: "Contato", id: "footer", icon: <Phone className="h-5 w-5" /> },
   ]
 

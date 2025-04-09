@@ -7,6 +7,7 @@ import { useEffect, useState } from "react"
 
 import { Button } from "@/components/button"
 import { cn } from "@/lib/utils"
+import React from "react"
 
 interface Product {
   id: number
@@ -265,4 +266,4 @@ const ProductCarousel = ({ products = [], whatsappLink }: ProductCarouselProps) 
     </div>
   )
 }
-export default ProductCarousel
+export default React.memo(ProductCarousel)
