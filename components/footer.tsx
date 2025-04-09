@@ -43,12 +43,12 @@ export function Footer({
           </div>
           <div>
             <h3 className="text-xl font-semibold text-white mb-6 flex items-center">
-              <span className="bg-amber-700 h-6 w-1 mr-3 rounded-full"></span>
-              Horário de Atendimento
+              <div className="bg-amber-700 h-6 w-1 mr-3 rounded-full" />
+                Horário de Atendimento
             </h3>
             <ul className="space-y-4 text-stone-400">
               {schedules.map((schedule, index) => (
-                <li key={index} className="flex items-center">
+                <li key={index + schedule} className="flex items-center">
                   <Clock className="mr-3 h-5 w-5 text-amber-500 flex-shrink-0" />
                   <span>{schedule}</span>
                 </li>
@@ -57,12 +57,12 @@ export function Footer({
           </div>
           <div>
             <h3 className="text-xl font-semibold text-white mb-6 flex items-center">
-              <span className="bg-amber-700 h-6 w-1 mr-3 rounded-full"></span>
+              <div className="bg-amber-700 h-6 w-1 mr-3 rounded-full"/>
               Formas de Pagamento
             </h3>
             <ul className="space-y-4 text-stone-400">
               {paymentMethods.map((method, index) => (
-                <li key={index} className="flex items-center">
+                <li key={index + method} className="flex items-center">
                   <CreditCard className="mr-3 h-5 w-5 text-amber-500 flex-shrink-0" />
                   <span>{method}</span>
                 </li>
@@ -91,7 +91,7 @@ export function Footer({
           </div>
           <div>
             <h3 className="text-xl font-semibold text-white mb-6 flex items-center">
-              <span className="bg-amber-700 h-6 w-1 mr-3 rounded-full"></span>
+              <div className="bg-amber-700 h-6 w-1 mr-3 rounded-full"/>
               Contato
             </h3>
             <ul className="space-y-4 text-stone-400">

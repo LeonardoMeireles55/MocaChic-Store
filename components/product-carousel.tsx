@@ -1,5 +1,6 @@
 "use client"
 
+import React from 'react'
 import { ChevronLeft, ChevronRight, ShoppingBag } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -7,7 +8,7 @@ import { useEffect, useState } from "react"
 
 import { Button } from "@/components/button"
 import { cn } from "@/lib/utils"
-import React from "react"
+
 
 interface Product {
   id: number
@@ -121,7 +122,7 @@ const ProductCarousel = ({ products = [], whatsappLink }: ProductCarouselProps) 
   const visibleProducts = getVisibleProducts()
 
   return (
-    <div className="relative w-full max-w-7xl mx-auto px-4" role="region" aria-label="Carrossel de produtos">
+    <section className="relative w-full max-w-7xl mx-auto px-4" aria-label="Carrossel de produtos">
       {isLoading ? (
         <div className="flex items-center justify-center h-[400px]">
           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-amber-500"></div>
@@ -136,7 +137,7 @@ const ProductCarousel = ({ products = [], whatsappLink }: ProductCarouselProps) 
           >
             {/* Products */}
             {visibleProducts.map((product, idx) => (
-              <div
+              <article
                 key={`${product.id}-${idx}`}
                 className={cn(
                   "group max-w-[280px] md:max-w-[300px] overflow-hidden rounded-xl border border-amber-100 bg-white shadow-md transition-all duration-500 hover:shadow-xl hover:-translate-y-2 hover:border-amber-300",
@@ -146,7 +147,6 @@ const ProductCarousel = ({ products = [], whatsappLink }: ProductCarouselProps) 
                 )}
                 onMouseEnter={() => setIsHovered(product.id)}
                 onMouseLeave={() => setIsHovered(null)}
-                role="article"
                 aria-label={`Produto: ${product.name}`}
                 itemScope
                 itemType="https://schema.org/Product"
@@ -165,13 +165,13 @@ const ProductCarousel = ({ products = [], whatsappLink }: ProductCarouselProps) 
                 <div className="relative aspect-[2/3] overflow-hidden">
                   <div className="absolute top-1 md:top-2 right-2 md:right-2 z-10">
                     <span className="bg-gradient-to-r from-amber-500 to-amber-600 text-white text-[10px] md:text-xs font-bold px-2 md:px-3 py-0.5 md:py-1 rounded-full shadow-md">
-                      {product.category || "New"}
+                      {product.category ?? "New"}
                     </span>
                   </div>
 
                   <Image
                     src={product?.image ? product.image : "/placeholder.svg"}
-                    alt={product?.alt || product?.name || "Produto"}
+                    alt={(product?.alt ?? product?.name) || "Produto"}
                     width={550}
                     height={600}
                     className={cn(
@@ -220,7 +220,7 @@ const ProductCarousel = ({ products = [], whatsappLink }: ProductCarouselProps) 
                     </Link>
                   </div>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
 
@@ -246,7 +246,7 @@ const ProductCarousel = ({ products = [], whatsappLink }: ProductCarouselProps) 
           <div className="mt-8 flex justify-center gap-2" role="tablist" aria-label="Navegação do carrossel">
             {products.map((_, idx) => (
               <Button
-                key={idx}
+                key={idx + _.id}
                 onClick={() => goToSlide(idx)}
                 disabled={isAnimating}
                 className={cn(
@@ -263,7 +263,7 @@ const ProductCarousel = ({ products = [], whatsappLink }: ProductCarouselProps) 
           </div>
         </>
       )}
-    </div>
+    </section>
   )
 }
 export default React.memo(ProductCarousel)

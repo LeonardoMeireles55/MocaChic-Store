@@ -8,7 +8,7 @@ interface WhatsAppButtonProps {
   fixed?: boolean
 }
 
-export function WhatsAppButton({ whatsappNumber, fixed = true }: WhatsAppButtonProps) {
+export function WhatsAppButton({ whatsappNumber, fixed = true }: Readonly<WhatsAppButtonProps>) {
   const whatsappLink = `https://wa.me/${whatsappNumber}`
 
   return (

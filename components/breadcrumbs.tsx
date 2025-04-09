@@ -10,7 +10,7 @@ interface BreadcrumbsProps {
   items: BreadcrumbItem[]
 }
 
-export function Breadcrumbs({ items }: BreadcrumbsProps) {
+export function Breadcrumbs({ items }: Readonly<BreadcrumbsProps>) {
   return (
     <nav aria-label="Breadcrumb" className="bg-white/80 backdrop-blur-sm py-2 border-b border-amber-100">
       <div className="container px-4 md:px-6">
@@ -26,7 +26,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
             </Link>
           </li>
           {items.map((item, index) => (
-            <li key={index} className="flex items-center">
+            <li key={index + item.href} className="flex items-center">
               <ChevronRight className="h-4 w-4 text-amber-400" />
               <Link
                 href={item.href}

@@ -26,7 +26,7 @@ export function TestimonialCard({ name, testimonial }: Readonly<TestimonialCardP
           <h3 className="font-medium text-stone-800 text-lg">{name}</h3>
           <div className="flex items-center mt-1">
             {[...Array(5)].map((_, i) => (
-              <svg key={i} className="w-4 h-4 text-amber-500 fill-current" viewBox="0 0 24 24">
+              <svg key={i + testimonial[i]} className="w-4 h-4 text-amber-500 fill-current" viewBox="0 0 24 24">
                 <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
               </svg>
             ))}

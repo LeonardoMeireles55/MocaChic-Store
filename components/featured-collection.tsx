@@ -17,7 +17,7 @@ export function FeaturedCollection({ products, whatsappLink, title }: Readonly<F
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 relative mt-4">
             <span className="relative inline-block">
               Elegância e Conforto
-              <span className="absolute -bottom-2 left-0 right-0 h-1 bg-amber-300 rounded-full"></span>
+              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-amber-300 rounded-full"/>
             </span>
           </h2>
           <p className="text-stone-600 mt-6 text-center max-w-2xl">

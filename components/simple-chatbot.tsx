@@ -8,7 +8,7 @@ interface SimpleChatbotProps {
   storeName: string
 }
 
-export function SimpleChatbot({ whatsappNumber, storeName }: SimpleChatbotProps) {
+export function SimpleChatbot({ whatsappNumber, storeName }: Readonly<SimpleChatbotProps>) {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleChat = useCallback(() => {
@@ -22,11 +22,10 @@ export function SimpleChatbot({ whatsappNumber, storeName }: SimpleChatbotProps)
   }, [whatsappNumber, storeName])
 
   return (
-    <div className="fixed bottom-6 right-6 z-50" role="dialog" aria-label="Chat de atendimento">
+    <dialog className="fixed bottom-6 right-6 z-50" aria-label="Chat de atendimento">
       {isOpen && (
-        <div
+        <dialog
           className="mb-2 mr-1 md:mb-5 w-[280px] sm:w-72 rounded-xl bg-white p-4 shadow-xl absolute bottom-12 right-0 sm:-left-74 border border-amber-100"
-          role="dialog"
           aria-label="Janela de chat"
         >
           <div className="flex items-center justify-between border-b border-amber-100 pb-2">
@@ -59,7 +58,7 @@ export function SimpleChatbot({ whatsappNumber, storeName }: SimpleChatbotProps)
               </div>
             </div>
           </div>
-        </div>
+        </dialog>
       )}
       <button
         onClick={toggleChat}
@@ -72,6 +71,6 @@ export function SimpleChatbot({ whatsappNumber, storeName }: SimpleChatbotProps)
           aria-hidden="true"
         />
       </button>
-    </div>
+    </dialog>
   )
 }

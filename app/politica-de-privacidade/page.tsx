@@ -1,10 +1,8 @@
 
 import { Footer } from "@/components/footer"
-import { Header } from "@/components/header"
 import { Breadcrumbs } from "@/components/breadcrumbs"
-import { Home, Phone } from "lucide-react"
 import Link from "next/link"
-import { HeaderWithScroll } from "@/components/headerWithScroll"
+import { NavWithScroll } from "@/components/nav-with-scroll"
 
 
 export const metadata = {
@@ -17,14 +15,9 @@ export default function PrivacyPolicyPage() {
   const whatsappNumber = "5592994128570"
   const whatsappLink = `https://wa.me/${whatsappNumber}`
 
-  const menuItems = [
-    { name: "Início", id: "home", href: "/", icon: <Home className="h-5 w-5" /> },
-    { name: "Contato", id: "footer", icon: <Phone className="h-5 w-5" /> },
-  ]
-
   return (
     <div className="flex min-h-screen flex-col bg-amber-50/70">
-      <Header scrollToSection={HeaderWithScroll} imageSrc="/images/nav_bar_logo.png" menuItems={menuItems} />
+      <NavWithScroll isHome={false}/>
       <main className="flex-1">
         <Breadcrumbs
           items={[

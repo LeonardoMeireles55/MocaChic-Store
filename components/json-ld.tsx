@@ -3,12 +3,12 @@ export function JsonLd({
   storeAddress,
   storeEmail,
   storePhone,
-}: {
+}: Readonly<{
   storeName: string
   storeAddress: string
   storeEmail: string
   storePhone: string
-}) {
+}>) {
   const storeSchema = {
     "@context": "https://schema.org",
     "@type": "ClothingStore",
