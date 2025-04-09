@@ -1,4 +1,4 @@
-import { TestimonialCard } from "@/components/testimonial-card"
+import { TestimonialCard } from "@/components/ui/actions/testimonial-card"
 
 interface Testimonial {
   name: string

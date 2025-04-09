@@ -1,17 +1,17 @@
 "use client"
 
-import { CallToAction } from "@/components/call-to-action"
-import { FeaturedCollection } from "@/components/featured-collection"
-import { Footer } from "@/components/footer"
-import { HeroSection } from "@/components/hero-section"
-import { TestimonialsSection } from "@/components/testimonials-section"
-import { VideoSection } from "@/components/video-section"
-import { TrustBadges } from "@/components/trust-badges"
-import { Breadcrumbs } from "@/components/breadcrumbs"
-import { SeoOptimizedSection } from "@/components/seo-optimized-section"
+import { CallToAction } from "@/components/ui/actions/call-to-action"
+import { FeaturedCollection } from "@/components/ui/store/featured-collection"
+import { Footer } from "@/components/ui/basic/footer"
+import { HeroSection } from "@/components/ui/store/hero-section"
+import { TestimonialsSection } from "@/components/ui/actions/testimonials-section"
+import { VideoSection } from "@/components/video/video-section"
+import { TrustBadges } from "@/components/ui/store/trust-badges"
+import { Breadcrumbs } from "@/components/ui/basic/breadcrumbs"
+import { SeoOptimizedSection } from "@/components/seo/seo-optimized-section"
 import type { Product } from "@/types/product"
 import { useEffect } from "react"
-import { NavWithScroll } from '@/components/nav-with-scroll'
+import { NavWithScroll } from '@/components/ui/basic/nav-with-scroll'
 
 export default function LandingPage() {
   // Improve SEO with page view tracking

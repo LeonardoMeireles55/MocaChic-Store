@@ -6,7 +6,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 
-import { Button } from "@/components/button"
+import { Button } from "@/components/ui/basic/button"
 import { cn } from "@/lib/utils"
 
 

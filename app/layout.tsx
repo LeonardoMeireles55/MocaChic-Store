@@ -2,11 +2,11 @@ import type { Metadata, Viewport } from "next"
 import { Bodoni_Moda_SC, Montserrat } from "next/font/google"
 import type React from "react"
 
-import { ThemeProvider } from "@/components/theme-provider"
-import { MetaPixel } from "@/components/meta-pixel"
-import { GoogleAnalytics } from "@/components/google-analytics"
-import { SimpleChatbot } from "@/components/simple-chatbot"
-import { JsonLd } from "@/components/json-ld"
+import { ThemeProvider } from "@/components/ui/basic/theme-provider"
+import { MetaPixel } from "@/components/seo/meta-pixel"
+import { GoogleAnalytics } from "@/components/seo/google-analytics"
+import { SimpleChatbot } from "@/components/ui/actions/simple-chatbot"
+import { JsonLd } from "@/components/seo/json-ld"
 import "./globals.css"
 import { Suspense } from "react"
 
@@ -115,6 +115,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${bodoniModa.variable} ${montserrat.variable}`} suppressHydrationWarning>
       <head>
+        <meta name="google-site-verification" content="dPmicEnxCz0l0WnoVE1W8Ye0y63x5fiqE_cNcAo5icA" />
         <link rel="canonical" href="https://mocachicfortaleza.com.br" />
       </head>
       <body className="font-sans">

@@ -1,8 +1,8 @@
 
-import { Footer } from "@/components/footer"
-import { Breadcrumbs } from "@/components/breadcrumbs"
+import { Footer } from "@/components/ui/basic/footer"
+import { Breadcrumbs } from "@/components/ui/basic/breadcrumbs"
 import Link from "next/link"
-import { NavWithScroll } from "@/components/nav-with-scroll"
+import { NavWithScroll } from "@/components/ui/basic/nav-with-scroll"
 
 
 export const metadata = {
