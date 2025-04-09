@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mocachicfortaleza.com.br/sitemap.xml

@@ -1,8 +1,8 @@
-import React from 'react';
+import type React from "react"
 
 interface YouTubeVideoProps {
-  videoId: string;
-  title?: string;
+  videoId: string
+  title?: string
 }
 
 export const YouTubeVideo: React.FC<YouTubeVideoProps> = ({ videoId, title }) => {
@@ -18,5 +18,5 @@ export const YouTubeVideo: React.FC<YouTubeVideoProps> = ({ videoId, title }) =>
         ></iframe>
       </div>
     </div>
-  );
-}; 
+  )
+}

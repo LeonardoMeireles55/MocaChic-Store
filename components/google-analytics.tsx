@@ -1,8 +1,8 @@
-'use client'
+"use client"
 
-import Script from 'next/script'
-import { usePathname, useSearchParams } from 'next/navigation'
-import { useEffect } from 'react'
+import Script from "next/script"
+import { usePathname, useSearchParams } from "next/navigation"
+import { useEffect } from "react"
 
 declare global {
   interface Window {
@@ -18,18 +18,15 @@ export function GoogleAnalytics() {
   useEffect(() => {
     // Track page views when route changes
     if (window.gtag) {
-      window.gtag('config', 'G-BT4QHBSH8N', {
-        page_path: pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : '')
+      window.gtag("config", "G-BT4QHBSH8N", {
+        page_path: pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : ""),
       })
     }
   }, [pathname, searchParams])
 
   return (
     <>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-BT4QHBSH8N"
-        strategy="afterInteractive"
-      />
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-BT4QHBSH8N" strategy="afterInteractive" />
       <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
@@ -40,4 +37,4 @@ export function GoogleAnalytics() {
       </Script>
     </>
   )
-} 
+}

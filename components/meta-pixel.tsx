@@ -1,8 +1,8 @@
-'use client'
+"use client"
 
-import Script from 'next/script'
-import { usePathname, useSearchParams } from 'next/navigation'
-import { useEffect } from 'react'
+import Script from "next/script"
+import { usePathname, useSearchParams } from "next/navigation"
+import { useEffect } from "react"
 
 declare global {
   interface Window {
@@ -17,7 +17,7 @@ export function MetaPixel() {
   useEffect(() => {
     // Track page views when route changes
     if (window.fbq) {
-      window.fbq('track', 'PageView')
+      window.fbq("track", "PageView")
     }
   }, [pathname, searchParams])
 
@@ -41,11 +41,11 @@ export function MetaPixel() {
         <img
           height="1"
           width="1"
-          style={{ display: 'none' }}
+          style={{ display: "none" }}
           src="https://www.facebook.com/tr?id=309208748801950&ev=PageView&noscript=1"
           alt=""
         />
       </noscript>
     </>
   )
-} 
+}

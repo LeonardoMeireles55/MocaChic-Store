@@ -4,4 +4,7 @@ export interface Product {
   description: string
   price: string
   image: string
+  alt?: string
+  category?: string
+  inStock?: boolean
 }

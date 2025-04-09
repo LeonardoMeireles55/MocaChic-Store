@@ -1,5 +1,5 @@
-import { FeatureCard } from '@/components/feature-card'
-import type { ReactNode } from 'react'
+import { FeatureCard } from "@/components/feature-card"
+import type { ReactNode } from "react"
 
 interface Feature {
   icon: ReactNode
@@ -13,9 +13,9 @@ interface FeaturesSectionProps {
 
 export function FeaturesSection({ features }: Readonly<FeaturesSectionProps>) {
   return (
-    <section id='features' className='py-16 bg-white'>
-      <div className='container px-4 md:px-6'>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+    <section id="features" className="py-16 bg-white">
+      <div className="container px-4 md:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <FeatureCard
               key={`${index}_${feature.title}`}

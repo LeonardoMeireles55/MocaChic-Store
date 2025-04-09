@@ -1,7 +1,7 @@
-'use client'
+"use client"
 
-import { useState, useCallback } from 'react'
-import { MessageCircle, X } from 'lucide-react'
+import { useState, useCallback } from "react"
+import { MessageCircle, X } from "lucide-react"
 
 interface SimpleChatbotProps {
   whatsappNumber: string
@@ -12,19 +12,19 @@ export function SimpleChatbot({ whatsappNumber, storeName }: SimpleChatbotProps)
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleChat = useCallback(() => {
-    setIsOpen(prev => !prev)
+    setIsOpen((prev) => !prev)
   }, [])
 
   const handleWhatsAppClick = useCallback(() => {
-    const cleanNumber = whatsappNumber.replace(/\D/g, '')
+    const cleanNumber = whatsappNumber.replace(/\D/g, "")
     const defaultMessage = encodeURIComponent(`Olá! Gostaria de saber mais sobre os produtos da ${storeName}.`)
-    window.open(`https://wa.me/${cleanNumber}?text=${defaultMessage}`, '_blank', 'noopener,noreferrer')
+    window.open(`https://wa.me/${cleanNumber}?text=${defaultMessage}`, "_blank", "noopener,noreferrer")
   }, [whatsappNumber, storeName])
 
   return (
     <div className="fixed bottom-6 right-6 z-50" role="dialog" aria-label="Chat de atendimento">
       {isOpen && (
-        <div 
+        <div
           className="mb-2 mr-1 md:mb-5 w-[280px] sm:w-72 rounded-xl bg-white p-4 shadow-xl absolute bottom-12 right-0 sm:-left-74 border border-amber-100"
           role="dialog"
           aria-label="Janela de chat"
@@ -67,11 +67,11 @@ export function SimpleChatbot({ whatsappNumber, storeName }: SimpleChatbotProps)
         aria-label={isOpen ? "Fechar chat" : "Abrir chat"}
         aria-expanded={isOpen}
       >
-        <MessageCircle 
-          className={`h-5 w-5 md:h-7 md:w-7 ${!isOpen ? 'animate-[ping_2s_ease-in-out_infinite]' : ''}`}
+        <MessageCircle
+          className={`h-5 w-5 md:h-7 md:w-7 ${!isOpen ? "animate-[ping_2s_ease-in-out_infinite]" : ""}`}
           aria-hidden="true"
         />
       </button>
     </div>
   )
-} 
+}
