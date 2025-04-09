@@ -6,7 +6,6 @@ import { GoogleAnalytics } from '@/components/seo/google-analytics'
 import { JsonLd } from '@/components/seo/json-ld'
 import { MetaPixel } from '@/components/seo/meta-pixel'
 import { SimpleChatbot } from '@/components/ui/actions/simple-chatbot'
-import { ThemeProvider } from '@/components/ui/basic/theme-provider'
 import { Suspense } from 'react'
 import './globals.css'
 
@@ -101,11 +100,11 @@ const montserrat = Montserrat({
   display: 'swap'
 })
 
-export default function RootLayout({
+const RootLayout = ({
   children
 }: Readonly<{
   children: React.ReactNode
-}>) {
+}>) => {
   const whatsappNumber = '5592994128570'
   const storeName = 'Moça Chic Fortaleza'
   const storeAddress = 'Avenida Jurunas, AF-25, Cidade Nova, Manaus'
@@ -126,12 +125,6 @@ export default function RootLayout({
         <link rel='canonical' href='https://mocachicfortaleza.com.br' />
       </head>
       <body className='font-sans'>
-        <ThemeProvider
-          attribute='class'
-          defaultTheme='light'
-          enableSystem={false}
-          disableTransitionOnChange
-        >
           <JsonLd
             storeName={storeName}
             storeAddress={storeAddress}
@@ -139,7 +132,6 @@ export default function RootLayout({
             storePhone={storePhone}
           />
           {children}
-        </ThemeProvider>
         <Suspense fallback={null}>
           <MetaPixel />
           <GoogleAnalytics />
@@ -149,3 +141,4 @@ export default function RootLayout({
     </html>
   )
 }
+export default RootLayout

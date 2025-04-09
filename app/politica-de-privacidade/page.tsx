@@ -8,7 +8,7 @@ export const metadata = {
   description: 'Conheça nossa política de privacidade e como protegemos seus dados pessoais.'
 }
 
-export default function PrivacyPolicyPage() {
+const PrivacyPolicyPage = () => {
   const whatsappNumber = '5592994128570'
   const whatsappLink = `https://wa.me/${whatsappNumber}`
 
@@ -158,3 +158,4 @@ export default function PrivacyPolicyPage() {
     </div>
   )
 }
+export default PrivacyPolicyPage

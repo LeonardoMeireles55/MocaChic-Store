@@ -7,14 +7,14 @@ import { Footer } from '@/components/ui/basic/footer'
 import { NavWithScroll } from '@/components/ui/basic/nav-with-scroll'
 import { FeaturedCollection } from '@/components/ui/store/featured-collection'
 import { HeroSection } from '@/components/ui/store/hero-section'
-import { TrustBadges } from '@/components/ui/store/trust-badges'
 import { VideoSection } from '@/components/video/video-section'
 import products from '@/constants/products'
 import testimonials from '@/constants/testimonials'
 import whatsAppLink from '@/constants/whatsapp-link'
 import { useEffect, useMemo } from 'react'
+import TrustBadgesList from '../components/ui/store/trust-badges-list';
 
-export default function LandingPage() {
+const LandingPage = () => {
   // Improve SEO with page view tracking
   useEffect(() => {
     // Track page view
@@ -40,7 +40,7 @@ export default function LandingPage() {
           primaryButtonText='Compre Agora'
           secondaryButtonText='Ver Coleção'
         />
-        <TrustBadges />
+        <TrustBadgesList />
         <FeaturedCollection
           products={products}
           whatsappLink={zapNumber}
@@ -81,3 +81,4 @@ export default function LandingPage() {
     </div>
   )
 }
+export default LandingPage

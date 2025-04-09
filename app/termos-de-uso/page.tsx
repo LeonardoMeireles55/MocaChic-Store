@@ -9,7 +9,7 @@ export const metadata = {
     'Conheça nossos termos de uso e condições para utilização dos nossos serviços e produtos.'
 }
 
-export default function TermsOfUsePage() {
+const TermsOfUsePage = () => {
   const whatsappNumber = '5592994128570'
   const whatsappLink = `https://wa.me/${whatsappNumber}`
 
@@ -178,3 +178,4 @@ export default function TermsOfUsePage() {
     </div>
   )
 }
+export default TermsOfUsePage

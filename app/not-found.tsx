@@ -3,8 +3,7 @@
 import Loading from '@/components/ui/basic/loading'
 import Link from 'next/link'
 import { Suspense } from 'react'
-
-export default function NotFound() {
+const NotFound = () => {
   return (
     <Suspense fallback={<Loading />}>
       <div className='min-h-screen flex items-center justify-center bg-amber-50/70'>
@@ -22,3 +21,4 @@ export default function NotFound() {
     </Suspense>
   )
 }
+export default NotFound
