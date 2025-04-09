@@ -3,7 +3,6 @@
 import { SeoOptimizedSection } from '@/components/seo/seo-optimized-section'
 import { CallToAction } from '@/components/ui/actions/call-to-action'
 import { TestimonialsSection } from '@/components/ui/actions/testimonials-section'
-import { Breadcrumbs } from '@/components/ui/basic/breadcrumbs'
 import { Footer } from '@/components/ui/basic/footer'
 import { NavWithScroll } from '@/components/ui/basic/nav-with-scroll'
 import { FeaturedCollection } from '@/components/ui/store/featured-collection'
@@ -33,7 +32,6 @@ export default function LandingPage() {
     <div id='home' className='flex min-h-screen flex-col bg-amber-50/70'>
       <NavWithScroll isHome={true} />
       <main className='flex-1'>
-        <Breadcrumbs items={[{ label: 'Início', href: '/' }]} />
         <HeroSection
           whatsappLink={zapNumber}
           badge='Nova Coleção 2025'
