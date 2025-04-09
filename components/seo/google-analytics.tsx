@@ -1,13 +1,13 @@
-"use client"
+'use client'
 
-import Script from "next/script"
-import { usePathname, useSearchParams } from "next/navigation"
-import { useEffect } from "react"
+import { usePathname, useSearchParams } from 'next/navigation'
+import Script from 'next/script'
+import { useEffect } from 'react'
 
 declare global {
   interface Window {
-    dataLayer: any[]
-    gtag: (...args: any[]) => void
+    dataLayer: unknown[]
+    gtag: (...args: unknown[]) => void
   }
 }
 
@@ -18,16 +18,19 @@ export function GoogleAnalytics() {
   useEffect(() => {
     // Track page views when route changes
     if (window.gtag) {
-      window.gtag("config", "G-BT4QHBSH8N", {
-        page_path: pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : ""),
+      window.gtag('config', 'G-BT4QHBSH8N', {
+        page_path: pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : '')
       })
     }
   }, [pathname, searchParams])
 
   return (
     <>
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-BT4QHBSH8N" strategy="afterInteractive" />
-      <Script id="google-analytics" strategy="afterInteractive">
+      <Script
+        src='https://www.googletagmanager.com/gtag/js?id=G-BT4QHBSH8N'
+        strategy='afterInteractive'
+      />
+      <Script id='google-analytics' strategy='afterInteractive'>
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}

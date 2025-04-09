@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import Script from "next/script"
-import { usePathname, useSearchParams } from "next/navigation"
-import { useEffect } from "react"
+import { usePathname, useSearchParams } from 'next/navigation'
+import Script from 'next/script'
+import { useEffect } from 'react'
 
 declare global {
   interface Window {
-    fbq: any
+    fbq: (event: string, ...args: unknown[]) => void
   }
 }
 
@@ -17,13 +17,13 @@ export function MetaPixel() {
   useEffect(() => {
     // Track page views when route changes
     if (window.fbq) {
-      window.fbq("track", "PageView")
+      window.fbq('track', 'PageView')
     }
   }, [pathname, searchParams])
 
   return (
     <>
-      <Script id="facebook-pixel" strategy="afterInteractive">
+      <Script id='facebook-pixel' strategy='afterInteractive'>
         {`
           !function(f,b,e,v,n,t,s)
           {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -38,12 +38,13 @@ export function MetaPixel() {
         `}
       </Script>
       <noscript>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          height="1"
-          width="1"
-          style={{ display: "none" }}
-          src="https://www.facebook.com/tr?id=309208748801950&ev=PageView&noscript=1"
-          alt=""
+          height='1'
+          width='1'
+          style={{ display: 'none' }}
+          src='https://www.facebook.com/tr?id=309208748801950&ev=PageView&noscript=1'
+          alt=''
         />
       </noscript>
     </>
