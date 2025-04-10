@@ -1,6 +1,6 @@
 'use client'
 
-import { Header } from '@/components/ui/basic/header'
+import Header from '@/components/ui/basic/header'
 import { Heart, Home, Phone, Star, Truck } from 'lucide-react'
 import { JSX } from 'react'
 

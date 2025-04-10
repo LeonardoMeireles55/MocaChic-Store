@@ -11,7 +11,7 @@ interface HeaderProps {
   scrollToSection: (sectionId: string) => void
 }
 
-export function Header({ imageSrc, menuItems, scrollToSection }: Readonly<HeaderProps>) {
+const Header = ({ imageSrc, menuItems, scrollToSection }: Readonly<HeaderProps>) => {
   return (
     <header className='border-b border-amber-200/50 bg-white/95 py-4 sticky top-0 z-50 shadow-sm backdrop-blur-md'>
       <div className="absolute inset-0 bg-[url('/images/simple_logo.png?height=1080&width=1920')] bg-cover bg-center opacity-10"></div>
@@ -58,3 +58,4 @@ export function Header({ imageSrc, menuItems, scrollToSection }: Readonly<Header
     </header>
   )
 }
+export default Header

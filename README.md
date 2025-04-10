@@ -1,7 +1,5 @@
 # 🛍️ Moça Chic Fortaleza
 
-![Moça Chic Logo](/public/icon.png)
-
 A modern e-commerce platform for Moça Chic Fortaleza, a women's fashion store offering elegant and sophisticated clothing.
 
 ## 📋 Overview
